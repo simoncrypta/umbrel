@@ -1,11 +1,9 @@
-version: "3.7"
+version: '2'
 services:
-  server:
+  homebridge:
     image: oznu/homebridge:raspberry-pi
-    restart: on-failure
+    restart: always
     network_mode: host
-    ports:
-      - ${APP_HOMEBRIDGE_PORT}:8581
     volumes:
       - ${APP_DATA_DIR}/data/homebridge:/homebridge
     environment:
